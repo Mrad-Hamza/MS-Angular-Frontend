@@ -1,0 +1,43 @@
+
+<div class="container">
+    <div>
+        <form (ngSubmit)="submit()" #rayon="ngForm" [formGroup]="addForm">
+            <div class="form-group">
+                <label for="name" formControlName="name">Name</label>
+                <input type="text" class="form-control" name="name" formControlName="name" ngModel />
+                <div class="alert alert-danger" [hidden]="!name?.invalid">Name is required</div>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last name</label>
+                <input type="text" class="form-control" name="last_name" formControlName="last_name" ngModel />
+                <div class="alert alert-danger" [hidden]="!last_name?.invalid">Last Name is required</div>
+            </div>
+            <div class="form-group">
+                <label for="birth_date">Birth Date</label>
+                <input type="date" class="form-control" name="birth_date" formControlName="birth_date" ngModel />
+                <div class="alert alert-danger" [hidden]="!birth_date?.invalid">Birth Date is required</div>
+            </div>
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select class="form-control" name="role" formControlName="role" ngModel>
+                    <option value="LEAD">LEAD</option>
+                    <option value="CUSTOMER">CUSTOMER</option>
+                </select>
+                <div class="alert alert-danger" [hidden]="!role?.invalid">Role is required</div>
+            </div>
+            <div class="form-group">
+                <label for="source">Source</label>
+                <select class="form-control" name="source" formControlName="source" ngModel>
+                    <option value="SOCIAL_MEDIA">SOCIAL_MEDIA</option>
+                    <option value="ON_FIELD">ON_FIELD</option>
+                    <option value="PHONE">PHONE</option>
+                    <option value="NEWSLETTER">NEWSLETTER</option>
+                </select>
+                <div class="alert alert-danger" [hidden]="!source?.invalid">Source is required</div>
+            </div>
+
+            <button type="submit" class="btn btn-dark" [disabled]="addForm.invalid">Submit</button>
+        </form>
+    </div>
+</div>
+<br><br>

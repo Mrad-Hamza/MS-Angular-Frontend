@@ -1,0 +1,42 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Dashboard" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Code</th>
+                <th scope="col">Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td> {{promotion.code}} </td>
+                <td> {{promotion.percentage}} </td>
+                <td> <button type="button" name="update" (click)="update()" class="btn btn-dark">Update</button></td>
+                <td><button type="submit" class="btn btn-danger" [routerLink]="['/promotion/all']"
+                        (click)="delete(promotion)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+  
+
+
+    <!-- <p-rating [(ngModel)]="val"></p-rating>
+<p-rating></p-rating> -->
+
+
+    <div *ngIf="updateEtat">
+        <!--     <app-update-rayon [rayon]="rayon"></app-update-rayon> aaaaa
+        -->
+        <sb-update-promotion [promotion]="promotion"></sb-update-promotion>
+    </div>
+
+</sb-layout-dashboard>

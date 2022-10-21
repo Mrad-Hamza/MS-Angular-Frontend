@@ -1,0 +1,36 @@
+<style>
+    .box {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+</style>
+<div class="container">
+    <div *ngIf="!submitted">
+        <h1>Update Person {{salesman.first_name}} {{salesman.last_name}}!</h1>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" class="form-control" name="first_name" [(ngModel)]="salesman.first_name" />
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last name</label>
+                <input type="text" class="form-control" name="last_name" [(ngModel)]="salesman.last_name" />
+            </div>
+            <div class="form-group">
+                <label for="bonus">Bonus</label>
+                <input type="text" class="form-control" name="bonus" [(ngModel)]="salesman.bonus" />
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input type="text" class="form-control" name="salary" [(ngModel)]="salesman.salary">
+            </div>
+            <div class="form-group">
+                <label for="phone_numver">Phone Number</label>
+                <input type="text" class="form-control" name="phone_numver" [(ngModel)]="salesman.phone_numver">
+            </div>
+            <button type="submit" class="btn btn-dark" [disabled]="">Submit</button>
+
+        </form>
+
+    </div>
+</div>

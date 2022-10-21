@@ -1,0 +1,102 @@
+
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Dashboard" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+
+        <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Birth Date</th>
+            <th scope="col">Role</th>
+            <th scope="col">Source</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td> {{person.name}} </td>
+            <td> {{person.last_name}} </td>
+            <td> {{person.birth_date}}</td>
+            <td> {{person.role}}</td>
+            <td> {{person.source}}</td>
+            <td> <button type="button" name="update" (click)="update()" class="btn btn-dark">Update</button></td>
+            <td><button type="submit" class="btn btn-danger" [routerLink]="['/person/all']"
+                    (click)="delete(person)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+        </table>
+
+<!-- <p-rating [(ngModel)]="val"></p-rating>
+<p-rating></p-rating> -->
+
+
+        <div *ngIf="updateEtat">
+<!--     <app-update-rayon [rayon]="rayon"></app-update-rayon> aaaaa
+        -->
+            <sb-update-person [person]="person"></sb-update-person>
+        </div>
+
+        <div>
+            <div class="row mb-2">
+                <div class="col-sm-8">
+                    <h3 class="m-0" (click)="salesmanButtonClicked()">Salesman</h3>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+        <div *ngIf="salesmanClicked">
+        </div>
+        <div>
+            <div class="row mb-2">
+                <div class="col-sm-8">
+                    <h3 class="m-0" (click)="feedbacksButtonClicked()">Feedbacks</h3>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+        <div *ngIf="feedbacksClicked">
+            <div *ngIf="person.salesman!==null">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Phone number</th>
+                                <th scope="col">Salary</th>
+                                <th scope="col">Bonus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{person.salesman.id}}</th>
+                                <td> {{person.salesman.first_name}} </td>
+                                <td> {{person.salesman.last_name}} </td>
+                                <td> {{person.salesman.phone_numver}}</td>
+                                <td> {{person.salesman.salary}}</td>
+                                <td> {{person.salesman.bonus}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+            <div *ngIf="person.salesman==null">
+                
+            </div>
+        </div>
+
+        <div>
+            <div class="row mb-2">
+                <div class="col-sm-8">
+                    <h3 class="m-0" (click)="purchasesButtonClicked()">Purchases</h3>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+        <div *ngIf="purchasesClicked">
+        </div>
+
+</sb-layout-dashboard>

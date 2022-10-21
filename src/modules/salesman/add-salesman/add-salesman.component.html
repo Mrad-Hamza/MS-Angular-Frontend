@@ -1,0 +1,34 @@
+<div class="container">
+    <div>
+        <form (ngSubmit)="submit()" #rayon="ngForm" [formGroup]="addForm">
+            <div class="form-group">
+                <label for="first_name" formControlName="first_name">Name</label>
+                <input type="text" class="form-control" name="first_name" formControlName="first_name" ngModel />
+                <div class="alert alert-danger" [hidden]="!first_name?.invalid">Name is required</div>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last name</label>
+                <input type="text" class="form-control" name="last_name" formControlName="last_name" ngModel />
+                <div class="alert alert-danger" [hidden]="!last_name?.invalid">Last Name is required</div>
+            </div>
+            <div class="form-group">
+                <label for="bonus">Bonus</label>
+                <input type="text" class="form-control" name="bonus" formControlName="bonus" ngModel />
+                <div class="alert alert-danger" [hidden]="!bonus?.invalid">Bonus is required</div>
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input type="text" class="form-control" name="salary" formControlName="salary" ngModel/>
+                <div class="alert alert-danger" [hidden]="!salary?.invalid">Salary is required</div>
+            </div>
+            <div class="form-group">
+                <label for="phone_numver">Phone number</label>
+                <input type="text" class="form-control" name="phone_numver" formControlName="phone_numver" ngModel />
+                <div class="alert alert-danger" [hidden]="!phone_numver?.invalid">Phone is required</div>
+            </div>
+
+            <button type="submit" class="btn btn-dark" [disabled]="addForm.invalid">Submit</button>
+        </form>
+    </div>
+</div>
+<br><br>

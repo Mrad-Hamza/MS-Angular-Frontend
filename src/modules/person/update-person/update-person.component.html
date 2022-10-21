@@ -1,0 +1,44 @@
+<style>
+    .box {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+</style>
+<div class="container">
+    <div *ngIf="!submitted">
+        <h1>Update Person {{person.name}} {{person.last_name}}!</h1>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="libelleRayon">Name</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="person.name" />
+            </div>
+            <div class="form-group">
+                <label for="codeRayon">Last name</label>
+                <input type="text" class="form-control" name="last_name" [(ngModel)]="person.last_name" />
+            </div>
+            <div class="form-group">
+                <label for="codeRayon">Birth date</label>
+                <input type="date" class="form-control" name="birth_date" [(ngModel)]="person.birth_date" />
+            </div>
+            <div class="form-group">
+                <label for="codeRayon">Role</label>
+                <select class="form-control" name="role" [(ngModel)]="person.role">
+                    <option value="LEAD">LEAD</option>
+                    <option value="CUSTOMER">CUSTOMER</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="codeRayon">Source</label>
+                <select class="form-control" name="source" [(ngModel)]="person.source">
+                    <option value="SOCIAL_MEDIA">SOCIAL_MEDIA</option>
+                    <option value="ON_FIELD">ON_FIELD</option>
+                    <option value="PHONE">PHONE</option>
+                    <option value="NEWSLETTER">NEWSLETTER</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-dark" [disabled]="">Submit</button>
+
+        </form>
+
+    </div>
+</div>

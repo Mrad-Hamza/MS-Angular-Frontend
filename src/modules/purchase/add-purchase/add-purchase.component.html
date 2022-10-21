@@ -1,0 +1,27 @@
+<div class="container">
+    <div>
+        <form (ngSubmit)="submit()" #rayon="ngForm" [formGroup]="addForm">
+            <div class="form-group">
+                <label for="first_name" formControlName="purchase_date">Purchase Date</label>
+                <input type="date" class="form-control" name="purchase_date" formControlName="purchase_date" ngModel />
+                <div class="alert alert-danger" [hidden]="!purchase_date?.invalid">Name is required</div>
+            </div>
+            <div class="form-group">
+                <label for="value">Value</label>
+                <input type="text" class="form-control" name="value" formControlName="value" ngModel />
+                <div class="alert alert-danger" [hidden]="!value?.invalid">Value is required</div>
+            </div>
+            <div class="form-group">
+                <label for="promotion">Promotion</label>
+                <select class="form-control" name="promotion" formControlName="promotion" ngModel>
+                    <option value="true">Oui</option>
+                    <option value="false">Non</option>
+                </select>
+                <div class="alert alert-danger" [hidden]="!promotion?.invalid">Promotion is required</div>
+            </div>
+
+            <button type="submit" class="btn btn-dark" [disabled]="addForm.invalid">Submit</button>
+        </form>
+    </div>
+</div>
+<br><br>

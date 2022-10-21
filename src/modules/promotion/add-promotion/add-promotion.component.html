@@ -1,0 +1,19 @@
+<div class="container">
+    <div>
+        <form (ngSubmit)="submit()" #rayon="ngForm" [formGroup]="addForm">
+            <div class="form-group">
+                <label for="code" formControlName="first_name">Code</label>
+                <input type="text" class="form-control" name="code" formControlName="code" ngModel />
+                <div class="alert alert-danger" [hidden]="!code?.invalid">Code is required</div>
+            </div>
+            <div class="form-group">
+                <label for="percentage">Percentage</label>
+                <input type="text" class="form-control" name="percentage" formControlName="percentage" ngModel />
+                <div class="alert alert-danger" [hidden]="!percentage?.invalid">Percentage is required</div>
+            </div>
+
+            <button type="submit" class="btn btn-dark" [disabled]="addForm.invalid">Submit</button>
+        </form>
+    </div>
+</div>
+<br><br>
