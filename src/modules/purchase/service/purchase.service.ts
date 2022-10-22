@@ -32,4 +32,8 @@ export class PurchaseService {
     add(data: any): Observable<Purchase> {
         return this.http.post<Purchase>(URI + "addPurchase", data);
     }
+
+    setOwner(idOwner:number,idPurchase:number){
+        return this.http.put<Purchase>(URI+"purchase/setOwner/"+idOwner+"/"+idPurchase,{});
+    }
 }
