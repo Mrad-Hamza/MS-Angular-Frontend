@@ -1,7 +1,7 @@
 import { Role } from "./Role";
 
 
-export class Person {
+export class User {
     idUser !: number;
     username !: string;
     email!: string;

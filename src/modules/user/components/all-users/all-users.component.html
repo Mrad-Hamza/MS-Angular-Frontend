@@ -1,0 +1,54 @@
+
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Dashboard" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+
+    <div>
+        <div class="row mb-2">
+            <div class="col-sm-8">
+                <h1 class="m-0" (click)="addButtonClicked()">Add new user</h1>
+            </div>
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">
+
+                    </a></li>
+                <li class="breadcrumb-item active"></li>
+            </ol>
+        </div>
+    </div>
+    <div *ngIf="addClicked">
+        <!-- <sb-add-user (user)="add($event)"></sb-add-user> -->
+    </div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">userName</th>
+            <th scope="col">email</th>
+            <th scope="col">BirthDate</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone number</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users">
+            <td>
+                {{ u.username }}
+            </td>
+            <td>{{ u.email }}</td>
+            <td>{{ u.birthdate }}</td>
+            <td>{{ u.address }}</td>
+            <td>{{ u.phoneNumber }}</td>
+            <td><button type="button" class="btn btn-sm btn-primary product-btn" (click)="navigateToUser(u)">View Details
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary product-btn" (click)="delete(u)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+
+</sb-layout-dashboard>
+

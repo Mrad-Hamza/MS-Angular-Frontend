@@ -5,7 +5,7 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: '/charts',
+        redirectTo: '/auth/login',
     },
     {
         path: 'charts',
@@ -22,8 +22,10 @@ const routes: Routes = [
     { path: 'person', loadChildren: () => import('modules/person/person-routing.module').then(m => m.PersonRoutingModule) },
     { path: 'salesman', loadChildren: () => import('modules/salesman/salesman-routing.module').then(m => m.SalesmanRoutingModule) },
     { path: 'promotion', loadChildren: () => import('modules/promotion/promotion-routing.module').then(m => m.PromotionRoutingModule) },
+    { path: 'person', loadChildren: () => import('modules/person/person-routing.module').then(m => m.PersonRoutingModule) },
+    
+    { path: 'user', loadChildren: () => import('../modules/user/user.module').then(m => m.UserModule) },
 
-    { path: 'purchase', loadChildren: () => import('modules/purchase/purchase-routing.module').then(m => m.PurchaseRoutingModule) },
     {
         path: 'auth',
         loadChildren: () =>

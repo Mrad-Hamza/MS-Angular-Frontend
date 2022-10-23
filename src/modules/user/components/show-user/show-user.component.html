@@ -1,0 +1,37 @@
+
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Dashboard" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+
+        <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Birth Date</th>
+            <th scope="col">Address</th>
+            <th scope="col">Role</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> {{user.username}} </td>
+            <td> {{user.email}} </td>
+            <td> {{user.birthdate}}</td>
+            <td> {{user.address}}</td>
+            <td> {{user.role}}</td>
+            <td> <button type="button" name="update" (click)="update()" class="btn btn-dark">Update</button></td>
+            <td><button type="submit" class="btn btn-danger" [routerLink]="['/user/all']"
+                    (click)="delete(person)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+        </table>
+
+</sb-layout-dashboard>
+
