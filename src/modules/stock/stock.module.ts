@@ -7,11 +7,12 @@ import { AddstockComponent } from './addstock/addstock.component';
 import { UpdatestockComponent } from './updatestock/updatestock.component';
 import { NavigationModule } from 'modules/navigation/navigation.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ViewStockComponent } from './view-stock/view-stock.component';
 
 
 
 @NgModule({
-  declarations: [AllstocksComponent, AddstockComponent, UpdatestockComponent],
+  declarations: [AllstocksComponent, AddstockComponent, UpdatestockComponent, ViewStockComponent],
   imports: [
     CommonModule,
     StockRoutingModule,

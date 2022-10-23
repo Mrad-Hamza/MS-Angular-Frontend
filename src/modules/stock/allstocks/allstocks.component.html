@@ -1,23 +1,11 @@
 <sb-layout-dashboard>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <sb-dashboard-head title="Dashboard" [hideBreadcrumbs]="false">
+    <sb-dashboard-head title="Stock" [hideBreadcrumbs]="false">
 
     </sb-dashboard-head>
 
-    <div>
-        <div class="row mb-2">
-            <div class="col-sm-8">
-                <h1 class="m-0" (click)="addButtonClicked()">Ajouter un stock </h1>
-            </div><!-- /.col -->
-            <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">
-
-                    </a></li>
-                <li class="breadcrumb-item active"></li>
-            </ol>
-        </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
+   
   <div *ngIf="addClicked">
          <sb-addstock (stock)="add($event)"></sb-addstock>
     </div>
@@ -26,9 +14,10 @@
         <thead>
             <tr>
 
-                <th scope="col">stockName</th>
+                <th scope="col">StockName</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Minimum quantity</th>
+                <th scope="col">des</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -37,12 +26,12 @@
                 <td>{{s.stockName}}</td>
                 <td>{{s.qte}}</td>
                 <td>{{s.minQte}}</td>
+                <td>{{s.description}}</td>
                 
                <td>
-                <button type="button" class="btn btn-md btn-primary product-btn" >View
+                <button type="button" class="btn btn-md btn-primary product-btn" (click)="navigateToStock(s)" >View
                         Details
                 </button>
-                <button type="button" class="btn btn-md btn-warning product-btn" (click)="update()" >Edit</button>
                     <button type="button" class="btn btn-md btn-danger product-btn"
                         (click)="delete(s)">Delete</button>
                 </td>
@@ -50,8 +39,15 @@
         </tbody>
        
     </table>
+   <div *ngIf="updateEtat">
+<!--     <app-update-rayon [rayon]="rayon"></app-update-rayon> aaaaa
+        -->
+            <sb-updatestock [stock]="stock"></sb-updatestock>
+        </div>
 
-
+        
+       
+        
     <!-- <div class="d-flex justify-content-between p-2">
     <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
         (pageChange)="refreshCountries()">

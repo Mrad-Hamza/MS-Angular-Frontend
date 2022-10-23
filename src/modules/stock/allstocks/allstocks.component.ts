@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Stock } from '@app/Models/Stock';
 import { StockService } from '../service/stock.service';
 
@@ -13,13 +13,28 @@ export class AllstocksComponent implements OnInit {
   addClicked: Boolean = false;
   stocks?: Stock[];
   stock !: Stock;
+  updateEtat: boolean = false;
 
-  constructor(public stockservice: StockService, public route: Router) { }
+  idStock: any;
+  constructor(public stockservice: StockService, public router: Router, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
+ 
+   
     this.fetchStockData();
   }
-
+  fetchStockDataa(idStock: any) {
+    this.stockservice.getById(idStock).subscribe(
+      (p) => {
+        this.stock = p;
+        console.log(this.stock)
+        console.log("succes")
+      },
+      (error) => {
+        console.log("erreur images :(")
+      }
+    )
+  }
   addButtonClicked() {
     this.addClicked = !this.addClicked;
   }
@@ -44,11 +59,15 @@ export class AllstocksComponent implements OnInit {
     );
   }
 
-  // navigateToSalesman(p: Stock) {
-  //   console.log(p + "nnn")
-  //   this.route.navigate(['/salesman/viewSalesman/' + p.idStock])
-  // }
+  navigateToStock(p: Stock) {
+    console.log(p + "nnn")
+    this.router.navigate(['/stock/viewStock/' + p.idStock])
+  }
 
+  update() {
+    console.log(this.updateEtat)
+    this.updateEtat = !this.updateEtat;
+  }
   add(stock: Stock) {
     this.stockservice.add(stock).subscribe(
       (d) => {

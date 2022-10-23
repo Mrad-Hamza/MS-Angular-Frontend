@@ -16,7 +16,7 @@ export class ProductService {
   }
 
   getById(idProduct: number): Observable<Product> {
-    return this.http.get<Product>(URI + "/retrieve-product/" + idProduct)
+    return this.http.get<Product>(URI + "retrieve-product/" + idProduct)
   }
 
   delete(idProduct: number) {
@@ -27,11 +27,8 @@ export class ProductService {
     return this.http.put<Product>(URI + "modify-product/" + idProduct, data);
   }
 
-  add(data: any, idStock:number): Observable<Product> {
-    return this.http.post<Product>(URI + "add-product/" + idStock, data);
+  add(data: any, id:number): Observable<Product> {
+    return this.http.post<Product>(URI + "add-product/" + id, data);
   }
 
-  // addClient(idC: number, idSalesman: number) {
-  //   return this.http.put<Product>(URI + "salesman/setClient/" + idC + "/" + idSalesman, {});
-  // }
 }

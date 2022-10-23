@@ -1,12 +1,20 @@
 <sb-layout-dashboard>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <sb-dashboard-head title="Dashboard" [hideBreadcrumbs]="false">
-
-    </sb-dashboard-head>
-
   
 
+  <br/>
+   <div>
+        <div class="row mb-2">
+            <div class="col-sm-8">
+                <h1 class="m-0" (click)="addButtonClicked()">Ajouter un produit </h1>
+            </div><!-- /.col -->
+           
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+    <div *ngIf="addClicked">
+         <sb-addproduct (product)="add($event)"></sb-addproduct>
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -18,16 +26,16 @@
             </tr>
         </thead>
          <tbody>
-            <tr *ngFor="let p of products">
+            <tr *ngFor="let p of products ">
+               
                 <td>{{p.code}}</td>
                 <td>{{p.name}}</td>
                 <td>{{p.price}}</td>
-                
+                <td>{{p.description}}</td>
                <td>
-                <button type="button" class="btn btn-md btn-primary product-btn" >View
+                <button type="button" class="btn btn-md btn-primary product-btn" (click)="navigateToProduct(p)" >View
                         Details
                 </button>
-                <button type="button" class="btn btn-md btn-warning product-btn" >Edit</button>
                     <button type="button" class="btn btn-md btn-danger product-btn"
                         (click)="delete(p)">Delete</button>
                 </td>
@@ -37,16 +45,6 @@
     </table>
 
 
-    <!-- <div class="d-flex justify-content-between p-2">
-    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
-        (pageChange)="refreshCountries()">
-    </ngb-pagination>
-
-    <select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
-        <option [ngValue]="2">2 items per page</option>
-        <option [ngValue]="4">4 items per page</option>
-        <option [ngValue]="6">6 items per page</option>
-    </select>
-</div> -->
+ 
 
 </sb-layout-dashboard>
