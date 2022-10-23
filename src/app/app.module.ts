@@ -8,10 +8,22 @@ import { AppComponent } from './app.component';
 import { SalesmanModule } from '../modules/salesman/salesman.module';
 import { PromotionModule } from '../modules/promotion/promotion.module';
 import { PurchaseModule } from '../modules/purchase/purchase.module';
+import { ProjectModule } from '../modules/project/project.module';
+import { TaskModule } from '../modules/task/task.module';
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, AppRoutingModule, HttpClientModule, PersonModule, SalesmanModule, PromotionModule, PurchaseModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        PersonModule,
+        SalesmanModule,
+        PromotionModule,
+        PurchaseModule,
+        ProjectModule,
+        TaskModule
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })

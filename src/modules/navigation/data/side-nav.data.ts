@@ -7,7 +7,7 @@ export const sideNavSections: SideNavSection[] = [
     },
     {
         text: 'INTERFACE',
-        items: ['layouts', 'pages'],
+        items: ['Project','Task','layouts', 'pages'],
     },
     {
         text: 'ADDONS',
@@ -20,6 +20,16 @@ export const sideNavItems: SideNavItems = {
         icon: 'tachometer-alt',
         text: 'Dashboard',
         link: '/dashboard',
+    },
+    Project: {
+        icon: 'tachometer-alt',
+        text: 'Project Management ',
+        link: '/project/all',
+    },
+    Task: {
+        icon: 'tachometer-alt',
+        text: 'Task Management ',
+        link: '/task/all',
     },
     layouts: {
         icon: 'columns',
