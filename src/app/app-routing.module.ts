@@ -45,6 +45,10 @@ const routes: Routes = [
             import('modules/utility/utility-routing.module').then(m => m.UtilityRoutingModule),
     },
     {
+        path : 'payroll', 
+        loadChildren: () => import('modules/payroll/payroll.module').then(m => m.PayrollModule)
+    },
+    {
         path: '**',
         pathMatch: 'full',
         loadChildren: () =>

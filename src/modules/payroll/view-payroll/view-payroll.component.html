@@ -1,0 +1,46 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Payrolls" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+<div class="inner-block">
+    <a routerLink="/payroll/all"><i class="fa fa-arrow-return-left">Return</i></a>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Payroll ID</th>
+                <td>{{payroll.id}}</td>
+            </tr>
+            <tr>
+                <th>Employee</th>
+                <td>{{payroll.employeeName}}</td>
+            </tr>
+            <tr>
+                <th>Payroll Month</th>
+                <td>{{payroll.payrollMonth}}</td>
+            </tr>
+            <tr>
+                <th>Total Working Days</th>
+                <td>{{payroll.totalWorkingDays}}</td>
+            </tr>
+            <tr>
+                <th>Earnings</th>
+                <td>{{payroll.earnings}}</td>
+            </tr>
+            <tr>
+                <th>Deductions</th>
+                <td>{{payroll.deductions}}</td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td>{{payroll.salary}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a [routerLink]="['/payroll/update-payroll', payroll.id]" class="btn btn-primary"><i class="fa fa-edit">Modifier</i></a>
+
+    <a class="btn btn-danger" (click)="deletePayroll(payroll)"><i class="fa fa-trash"> Supprimer</i></a>
+</div>
+</sb-layout-dashboard>

@@ -8,10 +8,11 @@ import { AppComponent } from './app.component';
 import { SalesmanModule } from '../modules/salesman/salesman.module';
 import { PromotionModule } from '../modules/promotion/promotion.module';
 import { PurchaseModule } from '../modules/purchase/purchase.module';
+import { PayrollModule } from '../modules/payroll/payroll.module';
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, AppRoutingModule, HttpClientModule, PersonModule, SalesmanModule, PromotionModule, PurchaseModule],
+    imports: [BrowserModule, AppRoutingModule, HttpClientModule, PersonModule, SalesmanModule, PromotionModule, PurchaseModule, PayrollModule],
     providers: [],
     bootstrap: [AppComponent],
 })
