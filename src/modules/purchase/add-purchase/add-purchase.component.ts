@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Promotion } from '@app/Models/Promotion';
 import { Purchase } from '@app/Models/Purchase';
 import { PurchaseService } from '../service/purchase.service';
 

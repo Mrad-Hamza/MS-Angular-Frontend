@@ -1,0 +1,49 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Dashboard" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Event Name</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Type</th>
+                <th scope="col">Canal</th>
+                <th scope="col">Goals</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{event._id}}</th>
+                <td> {{event.eventName}} </td>
+                <td> {{event.startDate}} </td>
+                <td> {{event.endDate}} </td>
+                <td> {{event.type}} </td>
+                <td> {{event.canal}}</td>
+                <td> {{event.goals}}</td>
+                <td> <button type="button" name="update" (click)="update()" class="btn btn-dark">Update</button></td>
+                <td><button type="submit" class="btn btn-danger" [routerLink]="['/event/all']"
+                        (click)="delete(event)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!-- <p-rating [(ngModel)]="val"></p-rating>
+<p-rating></p-rating> -->
+
+
+    <div *ngIf="updateEtat">
+        <!--     <app-update-rayon [rayon]="rayon"></app-update-rayon> aaaaa
+        -->
+        <sb-update-event [event]="event"></sb-update-event>
+    </div>
+
+</sb-layout-dashboard>

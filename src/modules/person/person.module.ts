@@ -19,7 +19,6 @@ import { AddPersonComponent } from './add-person/add-person.component';
     NavigationModule,
     FormsModule,
     ReactiveFormsModule,
-
   ]
 })
 export class PersonModule { }

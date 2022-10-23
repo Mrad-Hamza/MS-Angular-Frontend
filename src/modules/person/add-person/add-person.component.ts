@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-person.component.scss']
 })
 export class AddPersonComponent implements OnInit {
+    
     initialValue: Person = new Person;
     addForm !: FormGroup;
     @Output() person: EventEmitter<Person> = new EventEmitter<Person>();
