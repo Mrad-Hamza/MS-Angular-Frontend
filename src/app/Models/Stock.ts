@@ -3,5 +3,6 @@ export class Stock {
     stockName !: string;
     qte!: number;
     minQte!: number;
+    description!:string;
 
 }

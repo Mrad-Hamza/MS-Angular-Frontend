@@ -24,6 +24,10 @@ const routes: Routes = [
     { path: 'promotion', loadChildren: () => import('modules/promotion/promotion-routing.module').then(m => m.PromotionRoutingModule) },
 
     { path: 'purchase', loadChildren: () => import('modules/purchase/purchase-routing.module').then(m => m.PurchaseRoutingModule) },
+    { path: 'stock', loadChildren: () => import('../modules/stock/stock.module').then(m => m.StockModule) },
+    { path: 'product', loadChildren: () => import('../modules/product/product.module').then(m => m.ProductModule) },
+
+
     {
         path: 'auth',
         loadChildren: () =>

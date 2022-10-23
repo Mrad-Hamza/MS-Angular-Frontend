@@ -1,0 +1,52 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Dashboard" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+
+  
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+
+                <th scope="col">code</th>
+                <th scope="col">name</th>
+                <th scope="col">price</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+         <tbody>
+            <tr *ngFor="let p of products">
+                <td>{{p.code}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                
+               <td>
+                <button type="button" class="btn btn-md btn-primary product-btn" >View
+                        Details
+                </button>
+                <button type="button" class="btn btn-md btn-warning product-btn" >Edit</button>
+                    <button type="button" class="btn btn-md btn-danger product-btn"
+                        (click)="delete(p)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+       
+    </table>
+
+
+    <!-- <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+        (pageChange)="refreshCountries()">
+    </ngb-pagination>
+
+    <select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
+        <option [ngValue]="2">2 items per page</option>
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+    </select>
+</div> -->
+
+</sb-layout-dashboard>

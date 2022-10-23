@@ -2,16 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProductRoutingModule } from './product-routing.module';
-import { AllProductsComponent } from './all-products/all-products.component';
-import { AddProductComponent } from './add-product/add-product.component';
-import { EditProductComponent } from './edit-product/edit-product.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
+import { UpdateproductComponent } from './updateproduct/updateproduct.component';
+import { AllproductsComponent } from './allproducts/allproducts.component';
+import { NavigationModule } from '@modules/navigation/navigation.module';
 
 
 @NgModule({
-  declarations: [AllProductsComponent, AddProductComponent, EditProductComponent],
+  declarations: [AddproductComponent, UpdateproductComponent, AllproductsComponent],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    NavigationModule
   ]
 })
 export class ProductModule { }
