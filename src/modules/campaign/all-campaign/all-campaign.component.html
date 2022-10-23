@@ -5,6 +5,33 @@
 
     </sb-dashboard-head>
 
+
+<div class="form-group">
+    <label for="type">Type</label>
+    <select [(ngModel)]="searchType">
+        <option *ngFor="let option of typeOptions" [ngValue]="option">{{option}}</option>
+    </select>
+
+    <label for="type">Canal</label>
+    <select [(ngModel)]="searchCanal">
+        <option *ngFor="let option of canalOptions" [ngValue]="option">{{option}}</option>
+    </select>
+
+    <button (click)="test()"> Search </button>
+</div>
+
+<div class="form-group">
+    <label for="type">start Date</label>
+    <input type="date" [(ngModel)]="date1">
+
+
+    <label for="type">end Date</label>
+    <input type="date" [(ngModel)]="date2">
+
+
+    <button (click)="test2()"> Search </button>
+</div>
+
     <div>
         <div class="row mb-2">
             <div class="col-sm-8">

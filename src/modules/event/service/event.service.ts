@@ -17,6 +17,26 @@ export class EventService {
         return this.http.get<Event[]>(URI + "/");
     }
 
+    getByDates(date1: any,date2: any): Observable<Event[]>{
+        return this.http.get<Event[]>(URI+"/dates/"+date1+"/"+date2)
+    }
+
+    getByTypes(canal: any, type: any): Observable<Event[]> {
+        return this.http.get<Event[]>(URI + "/" + canal + "/" + type)
+    }
+
+    getLastWeek(): Observable<Number> {
+        return this.http.get<Number>(URI + "/lastWeek");
+    }
+
+    getLastMonth(): Observable<Number> {
+        return this.http.get<Number>(URI + "/lastMonth");
+    }
+
+    getLastYear(): Observable<Number> {
+        return this.http.get<Number>(URI + "/lastYear");
+    }
+
     getById(id: number): Observable<Event> {
         return this.http.get<Event>(URI + "/" + id)
     }

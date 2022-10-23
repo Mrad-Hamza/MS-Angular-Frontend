@@ -16,11 +16,58 @@ export class ViewEventComponent implements OnInit {
     submitted: boolean = false;
     addClient: boolean = false;
 
+    nbLastWeek : Number = 0;
+    nbLastMonth : Number = 0;
+    nbLastYear : Number = 0;
+
+    data = [
+        {
+            "name": "Last Week",
+            "value": this.nbLastWeek,
+            "extra": {
+                "code": "de"
+            }
+        },
+        {
+            "name": "Last Month",
+            "value": this.nbLastMonth,
+            "extra": {
+                "code": "us"
+            }
+        },
+        {
+            "name": "Last Year",
+            "value": this.nbLastYear,
+            "extra": {
+                "code": "fr"
+            }
+        }
+    ]
+
     constructor(private route: ActivatedRoute, private eventService: EventService, private router: Router) { }
 
     ngOnInit(): void {
         this.id = this.route.snapshot.paramMap.get('id')!;
         this.fetchEventsData(this.id);
+        this.fetchBarchChartData()
+    }
+
+    fetchBarchChartData(){
+        this.eventService.getLastWeek().subscribe(
+            (res)=>{
+                this.nbLastWeek=res
+            }
+        )
+        this.eventService.getLastMonth().subscribe(
+            (res) => {
+                this.nbLastMonth = res
+            }
+        )
+        this.eventService.getLastYear().subscribe(
+            (res) => {
+                this.nbLastYear = res
+            }
+        )
     }
 
     fetchEventsData(idP: any) {

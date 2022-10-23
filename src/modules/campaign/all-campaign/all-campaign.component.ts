@@ -14,10 +14,37 @@ export class AllCampaignComponent implements OnInit {
     campaigns?: CampaignMarketing[];
     campaign !: CampaignMarketing;
 
+    searchCanal: string = "";
+    searchType: string = "";
+    typeOptions = ['Lead Generation', 'Push product/offer/event', 'Upselling', 'Customer Success']
+    canalOptions = ['Social Media', 'Media', 'Billboards']
+
+    date1!: Date;
+    date2!: Date;
+
     constructor(public campaignMarketingService: CampaignService, public route: Router) { }
 
     ngOnInit(): void {
         this.fetchCampaignMarketingData()
+    }
+
+
+    test() {
+        console.log(this.searchCanal, this.searchType)
+        this.campaignMarketingService.getByTypes(this.searchCanal, this.searchType).subscribe(
+            (d) => {
+                this.campaigns = d
+            }
+        )
+    }
+
+    test2() {
+        console.log(this.date1, this.date2)
+        this.campaignMarketingService.getByDates(this.date1, this.date2).subscribe(
+            (d) => {
+                this.campaigns = d
+            }
+        )
     }
 
     addButtonClicked() {

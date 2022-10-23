@@ -37,4 +37,12 @@ export class CampaignService {
         return this.http.put<CampaignMarketing>(URI+"/addEvent/"+idC+"/"+idE,{});
     }
 
+    getByDates(date1: any, date2: any): Observable<CampaignMarketing[]> {
+        return this.http.get<CampaignMarketing[]>(URI + "/dates/" + date1 + "/" + date2)
+    }
+
+    getByTypes(canal: any, type: any): Observable<CampaignMarketing[]> {
+        return this.http.get<CampaignMarketing[]>(URI + "/" + canal + "/" + type)
+    }
+
 }
