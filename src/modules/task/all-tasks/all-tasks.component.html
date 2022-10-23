@@ -6,14 +6,10 @@
     <div>
         <div class="row mb-2">
             <div class="col-sm-8">
-                <h1 class="m-0" (click)="addButtonClicked()">Add a Task ?</h1>
+                <h1 class="m-0" (click)="addButtonClicked()">Add Task</h1>
             </div>
-            <!-- /.col -->
-           
         </div>
-        <!-- /.row -->
     </div>
-    <!-- /.container-fluid -->
     <div *ngIf="addClicked">
         <sb-add-task (task)="add($event)"></sb-add-task>
     </div>
@@ -21,26 +17,21 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">Projet</th>
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
-                <th scope="col">Date Creation</th>
                 <th scope="col">Durée</th>
                 <th scope="col">Status</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
-            {{task|json}}
+            {{
+                task | json
+            }}
             <tr *ngFor="let p of tasks">
-                <th scope="row">{{ p.project }}</th>
-                <td>
-                    {{ p.name }}
-                </td>
+                <th scope="row">{{ p.name }}</th>
                 <td>{{ p.description }}</td>
-                <td>{{ p.status }}</td>
-                <td>{{ p.createdAt }}</td>
-                <td>{{ p.isExpired }}</td>
+                <td>{{ p.expiredTime }}</td>
                 <td>{{ p.status }}</td>
                 <td>
                     <button
