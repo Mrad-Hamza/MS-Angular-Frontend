@@ -50,16 +50,16 @@ export class AllUsersComponent implements OnInit {
         this.route.navigate(['/user/showUser/'+u.idUser])
     }
 
-    // add(user: User) {< 
-    //     this.UserService.add(user).subscribe(
-    //         (d) => {
-    //             this.fetchUsersData();
-    //             console.log("succes ajout")
-    //         },
-    //         (error) => {
-    //             console.log("erreur images :(")
-    //         }
-    //     );
-    // }
+    add(user: User) {
+        this.UserService.add(user).subscribe(
+            (d) => {
+                this.fetchUsersData();
+                console.log("succes ajout")
+            },
+            (error) => {
+                console.log("erreur images :(")
+            }
+        );
+    }
 
 }

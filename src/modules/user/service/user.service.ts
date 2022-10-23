@@ -25,10 +25,10 @@ export class UserService {
     }
 
     update(data: any, id: number) {
-        return this.http.put<User>(URI+"/updateUser/" + id, data);
+        return this.http.put<User>(URI+"/update-user/" + id, data);
     }
 
     add(data: any): Observable<User> {
-        return this.http.post<User>(URI+"/addUser", data);
+        return this.http.post<User>(URI+"/add-user", data);
     }
 }

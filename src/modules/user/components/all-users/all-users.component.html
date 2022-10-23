@@ -13,14 +13,13 @@
             </div>
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">
-
                     </a></li>
                 <li class="breadcrumb-item active"></li>
             </ol>
         </div>
     </div>
     <div *ngIf="addClicked">
-        <!-- <sb-add-user (user)="add($event)"></sb-add-user> -->
+        <sb-add-user (user)="add($event)"></sb-add-user>
     </div>
 
 <table class="table table-striped">
@@ -31,7 +30,8 @@
             <th scope="col">BirthDate</th>
             <th scope="col">Address</th>
             <th scope="col">Phone number</th>
-
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -44,8 +44,8 @@
             <td>{{ u.address }}</td>
             <td>{{ u.phoneNumber }}</td>
             <td><button type="button" class="btn btn-sm btn-primary product-btn" (click)="navigateToUser(u)">View Details
-            </button>
-            <button type="button" class="btn btn-sm btn-outline-secondary product-btn" (click)="delete(u)">Delete</button></td>
+            </button></td>
+            <td> <button type="button" class="btn btn-sm btn-outline-secondary product-btn" (click)="delete(u)">Delete</button></td>
         </tr>
     </tbody>
 </table>

@@ -6,6 +6,8 @@ import { UpdateUserComponent } from './components/update-user/update-user.compon
 import { AllUsersComponent } from './components/all-users/all-users.component';
 import { ShowUserComponent } from './components/show-user/show-user.component';
 import { UserRoutingModule } from './user-routing.module';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,7 +16,9 @@ import { UserRoutingModule } from './user-routing.module';
   imports: [
     CommonModule,
     UserRoutingModule,
-    NavigationModule
+    NavigationModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }

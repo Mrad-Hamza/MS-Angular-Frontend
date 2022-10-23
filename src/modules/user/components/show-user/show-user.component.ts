@@ -11,10 +11,13 @@ import { UserService } from '@modules/user/service/user.service';
 })
 export class ShowUserComponent implements OnInit {
 
-  user !: User;
+    user!: User;
     id:any;
+    updateEtat: boolean = false;
+    submitted: boolean = false;
 
-    constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) { }
+    constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) { 
+    }
 
     ngOnInit(): void {
         this.id = parseInt(this.route.snapshot.paramMap.get('idUser')!);
@@ -32,6 +35,10 @@ export class ShowUserComponent implements OnInit {
                 console.log("erreur images :(")
             }
         )
+    }
+    update() {
+        console.log(this.updateEtat)
+        this.updateEtat = !this.updateEtat;
     }
 
     delete(u: User) {

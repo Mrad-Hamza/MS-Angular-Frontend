@@ -29,6 +29,7 @@ export class AddUserComponent implements OnInit {
           birthdate: ['', Validators.required],
           phoneNumber: ['', Validators.required],
           address: ['', Validators.required],
+        //   role: ['',Validators.required],
         })
     }
 
@@ -38,26 +39,34 @@ export class AddUserComponent implements OnInit {
     get email() {
         return this.addForm.get('email')
     }
-    get birth_date() {
-        return this.addForm.get('birth_date')
+    get password() {
+        return this.addForm.get('password')
     }
-    get role() {
-        return this.addForm.get('role')
+    get birthdate() {
+        return this.addForm.get('birthdate')
     }
-    get source() {
-        return this.addForm.get('source')
+    get phoneNumber() {
+        return this.addForm.get('phoneNumber')
     }
-
-
-    // submit() {
-    //     console.log(this.addForm.value);
-    //     this.initialValue.name = this.addForm.value.name;
-    //     this.initialValue.last_name = this.addForm.value.last_name;
-    //     this.initialValue.birth_date = this.addForm.value.birth_date;
-    //     this.initialValue.source = this.addForm.value.source;
-    //     this.initialValue.role = this.addForm.value.role;
-    //     this.person.emit(this.initialValue)
+    get address() {
+        return this.addForm.get('address')
+    }
+    // get role() {
+    //     return this.addForm.get('role')
     // }
+
+    submit() {
+        console.log(this.addForm.value);
+        this.initialValue.username = this.addForm.value.username;
+        this.initialValue.email = this.addForm.value.email;
+        this.initialValue.password = this.addForm.value.password;
+        this.initialValue.birthdate = this.addForm.value.birthdate;
+        this.initialValue.phoneNumber = this.addForm.value.phoneNumber;
+        this.initialValue.address = this.addForm.value.address;
+        // this.initialValue.role = this.addForm.value.role;
+        this.user.emit(this.initialValue)
+        console.log(this.initialValue)
+    }
 
 
 }

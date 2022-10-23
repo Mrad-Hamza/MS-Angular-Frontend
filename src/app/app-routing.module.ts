@@ -23,7 +23,7 @@ const routes: Routes = [
     { path: 'salesman', loadChildren: () => import('modules/salesman/salesman-routing.module').then(m => m.SalesmanRoutingModule) },
     { path: 'promotion', loadChildren: () => import('modules/promotion/promotion-routing.module').then(m => m.PromotionRoutingModule) },
     { path: 'person', loadChildren: () => import('modules/person/person-routing.module').then(m => m.PersonRoutingModule) },
-    
+    // { path: 'user', loadChildren: () => import('modules/user/user-routing.module').then(m => m.UserRoutingModule) },
     { path: 'user', loadChildren: () => import('../modules/user/user.module').then(m => m.UserModule) },
 
     {

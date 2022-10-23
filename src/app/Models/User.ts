@@ -10,4 +10,5 @@ export class User {
     phoneNumber !: number;
     address !: string;
     roles ?: Role[];
+    role!:String;
 }

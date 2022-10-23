@@ -10,7 +10,7 @@ const routes: Routes = [
         redirectTo: '/user/all',
     },
     { path: 'all', component: AllUsersComponent },
-    { path: 'showUser/:id', component: ShowUserComponent },
+    { path: 'showUser/:idUser', component: ShowUserComponent },
     {
         path: '**',
         pathMatch: 'full',
