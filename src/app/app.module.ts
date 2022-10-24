@@ -16,6 +16,8 @@ import { EventModule } from '@modules/event/event.module';
 import { CampaignModule } from '@modules/campaign/campaign.module';
 import { ProjectModule } from '../modules/project/project.module';
 import { TaskModule } from '../modules/task/task.module';
+import { PayrollModule } from '../modules/payroll/payroll.module';
+import { EmployeeModule } from '@modules/employee/employee.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -34,7 +36,9 @@ import { TaskModule } from '../modules/task/task.module';
         ProductModule,
         ProjectModule,
         TaskModule,
-        UserModule
+        UserModule,
+        PayrollModule, 
+        EmployeeModule
     ],
     providers: [],
     bootstrap: [AppComponent],

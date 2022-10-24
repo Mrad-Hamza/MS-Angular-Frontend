@@ -1,0 +1,68 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Payrolls" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+<div class="inner-block">
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Payrolls List</h3>
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th hidden>Id</th>
+                                <th>Employee</th>
+                                <th>Payroll Month</th>
+                                <th>Total Working Days</th>
+                                <th>Earnings</th>
+                                <th>Deductions</th>
+                                <th>Salary</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody *ngFor="let payroll of payrolls;let counter=index">
+                                <tr>
+                                    <td hidden>{{payroll.id}}</td>
+                                    <td>{{payroll.employee}}</td>
+                                    <td>{{payroll.payrollMonth}}</td>
+                                    <td>{{payroll.totalWorkingDays}}</td>
+                                    <td>{{payroll.earnings}}</td>
+                                    <td>{{payroll.deductions}}</td>
+                                    <td>{{payroll.salary}}</td>
+                                    <div class="tools">
+                                        <td>
+                                            <a [routerLink]="['/payroll/view-payroll', payroll.id]" class="btn btn-info"><i class="fa fa-info-circle"> Details</i></a>
+                                            <a [routerLink]="['/payroll/update-payroll', payroll.id]" class="btn btn-primary"><i class="fa fa-edit"> Modifier</i></a>
+                                            <a class="btn btn-danger" (click)="deletePayroll(payroll)"><i class="fa fa-trash"> Supprimer</i></a>
+                                        </td>
+                                    </div>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th hidden>id</th>
+                                <th>Employee</th>
+                                <th>Payroll Month</th>
+                                <th>Total Working Days</th>
+                                <th>Earnings</th>
+                                <th>Deductions</th>
+                                <th>Salary</th>
+                                <th>Actions</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        <a routerLink="/payroll/add-payroll"><i class="fa fa-plus-circle"> New Payroll</i></a>
+    </section><!-- /.content -->
+</div>
+</sb-layout-dashboard>

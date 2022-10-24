@@ -89,6 +89,14 @@ const routes: Routes = [
     },
 
     {
+        path : 'payroll', 
+        loadChildren: () => import('modules/payroll/payroll.module').then(m => m.PayrollModule)
+    },
+    {
+        path : 'employee', 
+        loadChildren: () => import('modules/employee/employee.module').then(m => m.EmployeeModule)
+    },
+    {
         path: '**',
         pathMatch: 'full',
         loadChildren: () =>

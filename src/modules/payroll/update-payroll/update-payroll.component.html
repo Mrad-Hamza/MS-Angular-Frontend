@@ -1,0 +1,57 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Payrolls" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+<div class="inner-block">
+    <a routerLink="/payroll/all"><i class="fa fa-arrow-return-left">Return</i></a>
+    <h1>Complete the following form:</h1>
+    <table>
+        <tr hidden>
+            <td>Payroll ID</td>
+            <td><input type="number" [(ngModel)]="currentPayroll.id" name="id" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Employee</td>
+            <td><input type="text" [(ngModel)]="currentPayroll.employee.name" name="employeeName" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Payroll Month</td>
+            <td>
+                <select [(ngModel)]="currentPayroll.payrollMonth" name="payrollMonth" class="form-control">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Total Working Days</td>
+            <td><input type="number" [(ngModel)]="currentPayroll.totalWorkingDays" name="totalWorkingDays" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Earnings</td>
+            <td><input type="number" [(ngModel)]="currentPayroll.earnings" name="earnings" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Deductions</td>
+            <td><input type="number" [(ngModel)]="currentPayroll.deductions" name="deductions" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td><input type="number" [(ngModel)]="currentPayroll.salary" name="salary" class="form-control"></td>
+        </tr>
+    </table>
+    <button type="submit" (click)="updatePayroll()" class="btn btn-primary"> Submit </button>
+</div>
+</sb-layout-dashboard>
