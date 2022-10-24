@@ -58,11 +58,9 @@ export class ViewSalesmanComponent implements OnInit {
         );
     }
 
-
-
     addClientToSalesman() {
         console.log(this.newClientId)
-        this.salesmanService.addClient(this.newClientId,this.salesman.id)
+        this.salesmanService.addClient(this.newClientId,this.salesman.id).subscribe()
         this.fetchClientsData()
     }
 

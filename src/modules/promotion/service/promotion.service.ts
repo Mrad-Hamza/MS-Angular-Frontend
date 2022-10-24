@@ -32,4 +32,8 @@ export class PromotionService {
     add(data: any): Observable<Promotion> {
         return this.http.post<Promotion>(URI + "addPromotion", data);
     }
+
+    setOwner(idOwner: number, idPurchase: number) {
+        return this.http.put<Promotion>(URI + "promotion/setOwner/" + idOwner + "/" + idPurchase, {});
+    }
 }

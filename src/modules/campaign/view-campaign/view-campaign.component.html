@@ -1,0 +1,99 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Dashboard" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Event Name</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Type</th>
+                <th scope="col">Canal</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{campaign._id}}</th>
+                <td> {{campaign.name}} </td>
+                <td> {{campaign.startDate}} </td>
+                <td> {{campaign.endDate}} </td>
+                <td> {{campaign.type}} </td>
+                <td> {{campaign.canal}}</td>
+                <td> <button type="button" name="update" (click)="update()" class="btn btn-dark">Update</button></td>
+                <td><button type="submit" class="btn btn-danger" [routerLink]="['/campaign/all']"
+                        (click)="delete(campaign)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div *ngIf="campaign.events.length>0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">End Date</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Canal</th>
+                    <th scope="col">Goals</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of campaign.events">
+                    <th scope="row">{{ e.id }}</th>
+                    <td>
+                        {{ e.eventName }}
+                    </td>
+                    <td>{{ e.startDate }}</td>
+                    <td>
+                        {{e.endDate}}
+                    </td>
+                    <td>{{e.type}}</td>
+                    <td>{{e.canal}}</td>
+                    <td> {{e.goals}} </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <div class="row mb-2">
+            <div class="col-sm-8">
+                <h3 class="m-0" (click)="addEventButtonClicked()">Add Event ?</h3>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+    <div *ngIf="addEventClicked">
+            <select [(ngModel)]="eventId">
+                <option *ngFor="let p of events" [ngValue]="p._id"> {{p.eventName}}</option>
+            </select><br />
+            <br/>
+            <button type="button" class="btn btn-sm btn-primary product-btn" (click)="addEventToCampaign()">View
+                Add
+            </button>
+            <br />
+    </div>
+
+
+    <!-- <p-rating [(ngModel)]="val"></p-rating>
+<p-rating></p-rating> -->
+
+
+    <div *ngIf="updateEtat">
+        <!--     <app-update-rayon [rayon]="rayon"></app-update-rayon> aaaaa
+        -->
+        <sb-update-campaign [campaign]="campaign"></sb-update-campaign>
+    </div>
+
+</sb-layout-dashboard>
+

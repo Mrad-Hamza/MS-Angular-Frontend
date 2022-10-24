@@ -1,0 +1,100 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Dashboard" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+
+
+<div class="form-group">
+    <label for="type">Type</label>
+    <select [(ngModel)]="searchType">
+        <option *ngFor="let option of typeOptions" [ngValue]="option">{{option}}</option>
+    </select>
+
+    <label for="type">Canal</label>
+    <select [(ngModel)]="searchCanal">
+        <option *ngFor="let option of canalOptions" [ngValue]="option">{{option}}</option>
+    </select>
+
+    <button (click)="test()"> Search </button>
+</div>
+
+<div class="form-group">
+    <label for="type">start Date</label>
+    <input type="date" [(ngModel)]="date1">
+
+
+    <label for="type">end Date</label>
+    <input type="date" [(ngModel)]="date2">
+
+
+    <button (click)="test2()"> Search </button>
+</div>
+
+    <div>
+        <div class="row mb-2">
+            <div class="col-sm-8">
+                <h1 class="m-0" (click)="addButtonClicked()">Add Campaign ?</h1>
+            </div><!-- /.col -->
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">
+
+                    </a></li>
+                <li class="breadcrumb-item active"></li>
+            </ol>
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+    <div *ngIf="addClicked">
+        <sb-add-campaign (campaign)="add($event)"></sb-add-campaign>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Type</th>
+                <th scope="col">Canal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of campaigns">
+                <th scope="row">{{ p.id }}</th>
+                <td>
+                    {{ p.name }}
+                </td>
+                <td>{{ p.startDate }}</td>
+                <td>
+                    {{p.endDate}}
+                </td>
+                <td>{{p.type}}</td>
+                <td>{{p.canal}}</td>
+                <td><button type="button" class="btn btn-sm btn-primary product-btn"
+                        (click)="navigateToPurchase(p)">View
+                        Details
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary product-btn"
+                        (click)="delete(p)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!-- <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+        (pageChange)="refreshCountries()">
+    </ngb-pagination>
+
+    <select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
+        <option [ngValue]="2">2 items per page</option>
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+    </select>
+</div> -->
+
+</sb-layout-dashboard>

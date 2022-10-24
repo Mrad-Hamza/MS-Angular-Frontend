@@ -12,10 +12,12 @@ import { UserModule } from '@modules/user/user.module';
 import { StockModule } from '../modules/stock/stock.module';
 import { RouterModule } from '@angular/router';
 import { ProductModule } from '../modules/product/product.module';
+import { EventModule } from '@modules/event/event.module';
+import { CampaignModule } from '@modules/campaign/campaign.module';
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, AppRoutingModule, HttpClientModule, PersonModule, SalesmanModule, PromotionModule, PurchaseModule,FormsModule,StockModule, ProductModule],
+    imports: [BrowserModule, AppRoutingModule, HttpClientModule, EventModule, CampaignModule, PersonModule, SalesmanModule, PromotionModule, PurchaseModule,FormsModule,StockModule, ProductModule],
     providers: [],
     bootstrap: [AppComponent],
 })

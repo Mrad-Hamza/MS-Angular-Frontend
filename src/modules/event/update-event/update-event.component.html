@@ -1,0 +1,47 @@
+<style>
+    .box {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+</style>
+<div class="container">
+    <div *ngIf="!submitted">
+        <h1>Update Person {{event.eventName}}!</h1>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="libelleRayon">Event Name</label>
+                <input type="text" class="form-control" name="eventName" [(ngModel)]="event.eventName"/>
+            </div>
+            <div class="form-group">
+                <label for="codeRayon">Start Date</label>
+                <input type="date" class="form-control" name="startDate" [(ngModel)]="event.startDate" />
+            </div>
+            <div class="form-group">
+                <label for="codeRayon">Birth date</label>
+                <input type="date" class="form-control" name="endDate" [(ngModel)]="event.endDate" />
+            </div>
+            <div class="form-group">
+                <label for="codeRayon">Type</label>
+                <select class="form-control" name="type" [(ngModel)]="event.type">
+                    <option value="Virtual">Virtual</option>
+                    <option value="In Person">In Person</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="codeRayon">Canal</label>
+                <select class="form-control" name="canal" [(ngModel)]="event.canal">
+                    <option value="Social Media">Social Media</option>
+                    <option value="Media">Media</option>
+                    <option value="Billboards">Billboards</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="goals">Goals</label>
+                <input type="text" class="form-control" name="goals" [(ngModel)]="event.goals" />
+            </div>
+            <button type="submit" class="btn btn-dark" [disabled]="">Submit</button>
+
+        </form>
+
+    </div>
+</div>
