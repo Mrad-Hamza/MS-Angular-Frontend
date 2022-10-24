@@ -3,9 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     {
+        path:"login",
+        loadChildren: () => import('../modules/auth/auth.module').then(m=>m.AuthModule)
+    },
+    {
         path: '',
         pathMatch: 'full',
-        redirectTo: '/auth/login',
+        redirectTo: '/login',
     },
     {
         path: 'charts',

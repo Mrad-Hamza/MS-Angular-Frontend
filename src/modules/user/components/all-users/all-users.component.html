@@ -2,7 +2,7 @@
 <sb-layout-dashboard>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <sb-dashboard-head title="Dashboard" [hideBreadcrumbs]="false">
+    <sb-dashboard-head title="user" [hideBreadcrumbs]="false">
 
     </sb-dashboard-head>
 
@@ -11,11 +11,6 @@
             <div class="col-sm-8">
                 <h1 class="m-0" (click)="addButtonClicked()">Add new user</h1>
             </div>
-            <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">
-                    </a></li>
-                <li class="breadcrumb-item active"></li>
-            </ol>
         </div>
     </div>
     <div *ngIf="addClicked">
