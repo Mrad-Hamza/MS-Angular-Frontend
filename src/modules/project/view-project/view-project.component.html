@@ -35,36 +35,7 @@
         </tbody>
     </table>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Tasks</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ project.tasks }}</td>
-                <td>
-                    <button type="button" name="update" (click)="update()" class="btn btn-dark">
-                        Update
-                    </button>
-                </td>
-                <td>
-                    <button
-                        type="submit"
-                        class="btn btn-danger"
-                        [routerLink]="['/project/all']"
-                        (click)="delete(project)"
-                    >
-                        Delete
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <!-- <p-rating [(ngModel)]="val"></p-rating>
-<p-rating></p-rating> -->
+    
 
 <div *ngIf="updateEtat">
     <!--     <app-update-rayon [rayon]="rayon"></app-update-rayon> aaaaa
