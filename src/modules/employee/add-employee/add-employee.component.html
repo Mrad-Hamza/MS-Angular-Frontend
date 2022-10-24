@@ -1,0 +1,42 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Employees" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+    <div class="inner-block">
+        <a routerLink="/employee/all"><i class="fa fa-arrow-return-left">Return</i></a>
+        <h1>Complete the following form:</h1>
+        <table>
+            <tr hidden>
+                <td>Employee ID</td>
+                <td><input type="number" [(ngModel)]="newEmployee.id" name="id" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" [(ngModel)]="newEmployee.name" name="name" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" [(ngModel)]="newEmployee.email" name="email" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><input type="text" [(ngModel)]="newEmployee.phone" name="phone" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Job Title</td>
+                <td><input type="text" [(ngModel)]="newEmployee.jobTitle" name="jobTitle" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <td><input type="number" [(ngModel)]="newEmployee.salary" name="salary" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Image</td>
+                <td><input type="text" [(ngModel)]="newEmployee.imageUrl" name="imageUrl" class="form-control"></td>
+            </tr>
+        </table>
+        <button type="submit" (click)="addEmployee()" class="btn btn-primary"> Submit </button>
+    </div>
+</sb-layout-dashboard>

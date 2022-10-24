@@ -29,8 +29,8 @@
                             </thead>
                             <tbody *ngFor="let payroll of payrolls;let counter=index">
                                 <tr>
-                                    <td hidden>{{payroll}}</td>
-                                    <td>{{payroll.employeeName}}</td>
+                                    <td hidden>{{payroll.id}}</td>
+                                    <td>{{payroll.employee}}</td>
                                     <td>{{payroll.payrollMonth}}</td>
                                     <td>{{payroll.totalWorkingDays}}</td>
                                     <td>{{payroll.earnings}}</td>

@@ -14,7 +14,11 @@
         </tr>
         <tr>
             <td>Employee</td>
-            <td><input type="text" [(ngModel)]="newPayroll.employeeName" name="employeeName" class="form-control"></td>
+            <td>
+                <select [(ngModel)]="newPayroll.employee" name="payrollEmployee" class="form-control">
+                    <option *ngFor="let employee of employees" [(ngValue)]='employee'>{{employee.name}}</option>
+                </select>
+            </td>
         </tr>
         <tr>
             <td>Payroll Month</td>

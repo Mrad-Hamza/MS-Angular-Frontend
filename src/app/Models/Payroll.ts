@@ -1,6 +1,8 @@
+import { Employee } from './Employee';
+
 export class Payroll {
     id !: number;
-	employeeName !: string;
+	employee !: Employee;
     payrollMonth !: string;
 	totalWorkingDays !: number;
 	salary !: number;
