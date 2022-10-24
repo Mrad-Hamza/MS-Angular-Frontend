@@ -1,0 +1,30 @@
+<div class="container">
+    <div>
+        <form (ngSubmit)="submit()" #rayon="ngForm" [formGroup]="addForm">
+            <div class="form-group">
+                <label for="stockName" formControlName="stockName">Name</label>
+                <input type="text" class="form-control" name="stockName" formControlName="stockName" ngModel />
+                <div class="alert alert-danger" [hidden]="!stockName?.invalid">Name is required</div>
+            </div>
+            <div class="form-group">
+                <label for="qte">Quantity</label>
+                <input type="number" class="form-control" name="qte" formControlName="qte" ngModel />
+                <div class="alert alert-danger" [hidden]="!qte?.invalid">quantity is required</div>
+            </div>
+            <div class="form-group">
+                <label for="minQte">Minimum Quantity</label>
+                <input type="number" class="form-control" name="minQte" formControlName="minQte" ngModel />
+                <div class="alert alert-danger" [hidden]="!minQte?.invalid">Minimum Quantity</div>
+            </div>
+            <div class="form-group">
+                <label for="description" formControlName="stockName">Description</label>
+                <input type="text" class="form-control" name="description" formControlName="description" ngModel />
+                <div class="alert alert-danger" [hidden]="!description?.invalid">description is required</div>
+            </div>
+            
+
+            <button type="submit" class="btn btn-dark" [disabled]="addForm.invalid">Submit</button>
+        </form>
+    </div>
+</div>
+<br><br>

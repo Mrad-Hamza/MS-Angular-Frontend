@@ -9,10 +9,13 @@ import { SalesmanModule } from '../modules/salesman/salesman.module';
 import { PromotionModule } from '../modules/promotion/promotion.module';
 import { PurchaseModule } from '../modules/purchase/purchase.module';
 import { UserModule } from '@modules/user/user.module';
+import { StockModule } from '../modules/stock/stock.module';
+import { RouterModule } from '@angular/router';
+import { ProductModule } from '../modules/product/product.module';
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, AppRoutingModule, HttpClientModule, PersonModule, SalesmanModule, PromotionModule, PurchaseModule,FormsModule],
+    imports: [BrowserModule, AppRoutingModule, HttpClientModule, PersonModule, SalesmanModule, PromotionModule, PurchaseModule,FormsModule,StockModule, ProductModule],
     providers: [],
     bootstrap: [AppComponent],
 })

@@ -29,6 +29,9 @@ const routes: Routes = [
     { path: 'person', loadChildren: () => import('modules/person/person-routing.module').then(m => m.PersonRoutingModule) },
     // { path: 'user', loadChildren: () => import('modules/user/user-routing.module').then(m => m.UserRoutingModule) },
     { path: 'user', loadChildren: () => import('../modules/user/user.module').then(m => m.UserModule) },
+    { path: 'purchase', loadChildren: () => import('modules/purchase/purchase-routing.module').then(m => m.PurchaseRoutingModule) },
+    { path: 'stock', loadChildren: () => import('../modules/stock/stock.module').then(m => m.StockModule) },
+    { path: 'product', loadChildren: () => import('../modules/product/product.module').then(m => m.ProductModule) },
 
     {
         path: 'auth',

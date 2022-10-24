@@ -1,0 +1,63 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Stock" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+
+   
+  <div *ngIf="addClicked">
+         <sb-addstock (stock)="add($event)"></sb-addstock>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+
+                <th scope="col">StockName</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Minimum quantity</th>
+                <th scope="col">des</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+         <tbody>
+            <tr *ngFor="let s of stocks">
+                <td>{{s.stockName}}</td>
+                <td>{{s.qte}}</td>
+                <td>{{s.minQte}}</td>
+                <td>{{s.description}}</td>
+                
+               <td>
+                <button type="button" class="btn btn-md btn-primary product-btn" (click)="navigateToStock(s)" >View
+                        Details
+                </button>
+                    <button type="button" class="btn btn-md btn-danger product-btn"
+                        (click)="delete(s)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+       
+    </table>
+   <div *ngIf="updateEtat">
+<!--     <app-update-rayon [rayon]="rayon"></app-update-rayon> aaaaa
+        -->
+            <sb-updatestock [stock]="stock"></sb-updatestock>
+        </div>
+
+        
+       
+        
+    <!-- <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+        (pageChange)="refreshCountries()">
+    </ngb-pagination>
+
+    <select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
+        <option [ngValue]="2">2 items per page</option>
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+    </select>
+</div> -->
+
+</sb-layout-dashboard>

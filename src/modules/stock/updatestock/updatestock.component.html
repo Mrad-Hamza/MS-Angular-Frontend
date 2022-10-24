@@ -1,0 +1,28 @@
+<div class="container">
+    <div *ngIf="!submitted">
+        <h1>Update Stock {{stock.stockName}}</h1>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="Stock Name">Stock Name</label>
+                <input type="text" class="form-control" name="stockName" [(ngModel)]="stock.stockName" />
+            </div>
+            <div class="form-group">
+                <label for="qte">Quantity</label>
+                <input type="text" class="form-control" name="qte" [(ngModel)]="stock.qte" />
+            </div>
+            <div class="form-group">
+                <label for="minQte">Minimum quanity</label>
+                <input type="text" class="form-control" name="minQte" [(ngModel)]="stock.minQte" />
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" name="description" [(ngModel)]="stock.description" />
+            </div>
+           
+            
+            <button type="submit" class="btn btn-dark" [disabled]="">Submit</button>
+
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  
+
+  <br/>
+   <div>
+        <div class="row mb-2">
+            <div class="col-sm-8">
+                <h1 class="m-0" (click)="addButtonClicked()">Ajouter un produit </h1>
+            </div><!-- /.col -->
+           
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+    <div *ngIf="addClicked">
+         <sb-addproduct (product)="add($event)"></sb-addproduct>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+
+                <th scope="col">code</th>
+                <th scope="col">name</th>
+                <th scope="col">price</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+         <tbody>
+            <tr *ngFor="let p of products ">
+               
+                <td>{{p.code}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.description}}</td>
+               <td>
+                <button type="button" class="btn btn-md btn-primary product-btn" (click)="navigateToProduct(p)" >View
+                        Details
+                </button>
+                    <button type="button" class="btn btn-md btn-danger product-btn"
+                        (click)="delete(p)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+       
+    </table>
+
+
+ 
+
+</sb-layout-dashboard>

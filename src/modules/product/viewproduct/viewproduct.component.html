@@ -1,0 +1,51 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <sb-dashboard-head title="Dashboard" [hideBreadcrumbs]="false">
+
+    </sb-dashboard-head>
+
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+
+                <th scope="col">Code</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">description</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+         <tbody>
+            <tr >
+                
+                <td>{{product.code}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.description}}</td>
+              
+                
+             <td> <button type="button" name="update" (click)="update()" class="btn btn-dark">Update</button></td>
+                <td><button type="submit" class="btn btn-danger" [routerLink]="['/product/all']"
+                        (click)="delete(product)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- <p-rating [(ngModel)]="val"></p-rating>
+<p-rating></p-rating> -->
+
+ 
+
+   
+
+    <div *ngIf="updateEtat">
+        <!--     <app-update-rayon [rayon]="rayon"></app-update-rayon> aaaaa
+        -->
+        <sb-updateproduct [product]="product"></sb-updateproduct>
+    </div>
+
+</sb-layout-dashboard>
+
