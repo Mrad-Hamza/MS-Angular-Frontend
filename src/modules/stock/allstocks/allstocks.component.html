@@ -4,7 +4,14 @@
     <sb-dashboard-head title="Stock" [hideBreadcrumbs]="false">
 
     </sb-dashboard-head>
-
+    <div>
+        <div class="row mb-2">
+            <div class="col-sm-8">
+                <h1 class="m-0" (click)="addButtonClicked()">Ajouter un stock </h1>
+            </div><!-- /.col -->
+           
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
    
   <div *ngIf="addClicked">
          <sb-addstock (stock)="add($event)"></sb-addstock>
