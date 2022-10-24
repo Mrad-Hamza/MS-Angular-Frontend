@@ -1,0 +1,67 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <sb-dashboard-head title="Task" [hideBreadcrumbs]="false"> </sb-dashboard-head>
+
+    <div>
+        <div class="row mb-2">
+            <div class="col-sm-8">
+                <h1 class="m-0" (click)="addButtonClicked()">Add Task</h1>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="addClicked">
+        <sb-add-task (task)="add($event)"></sb-add-task>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Durée</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{
+                task | json
+            }}
+            <tr *ngFor="let p of tasks">
+                <th scope="row">{{ p.name }}</th>
+                <td>{{ p.description }}</td>
+                <td>{{ p.expiredTime }}</td>
+                <td>{{ p.status }}</td>
+                <td>
+                    <button
+                        type="button"
+                        class="btn btn-sm btn-primary product-btn"
+                        (click)="navigateToTask(p)"
+                    >
+                        View Details
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary product-btn"
+                        (click)="delete(p)"
+                    >
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+        (pageChange)="refreshCountries()">
+    </ngb-pagination>
+
+    <select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
+        <option [ngValue]="2">2 items per page</option>
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+    </select>
+</div> -->
+</sb-layout-dashboard>

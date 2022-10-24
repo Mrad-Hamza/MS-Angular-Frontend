@@ -34,7 +34,29 @@ const routes: Routes = [
     { path: 'purchase', loadChildren: () => import('modules/purchase/purchase-routing.module').then(m => m.PurchaseRoutingModule) },
     { path: 'stock', loadChildren: () => import('../modules/stock/stock.module').then(m => m.StockModule) },
     { path: 'product', loadChildren: () => import('../modules/product/product.module').then(m => m.ProductModule) },
+    {
+        path: 'person',
+        loadChildren: () =>
+            import('modules/person/person-routing.module').then(m => m.PersonRoutingModule),
+    },
+    {
+        path: 'salesman',
+        loadChildren: () =>
+            import('modules/salesman/salesman-routing.module').then(m => m.SalesmanRoutingModule),
+    },
+    {
+        path: 'promotion',
+        loadChildren: () =>
+            import('modules/promotion/promotion-routing.module').then(
+                m => m.PromotionRoutingModule
+            ),
+    },
 
+    {
+        path: 'purchase',
+        loadChildren: () =>
+            import('modules/purchase/purchase-routing.module').then(m => m.PurchaseRoutingModule),
+    },
     {
         path: 'auth',
         loadChildren: () =>
@@ -55,6 +77,17 @@ const routes: Routes = [
         loadChildren: () =>
             import('modules/utility/utility-routing.module').then(m => m.UtilityRoutingModule),
     },
+
+    {
+        path: 'project',
+        loadChildren: () => import('modules/project/project.module').then(m => m.ProjectModule),
+    },
+
+    {
+        path: 'task',
+        loadChildren: () => import('modules/task/task.module').then(m => m.TaskModule),
+    },
+
     {
         path: '**',
         pathMatch: 'full',

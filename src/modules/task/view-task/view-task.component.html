@@ -1,0 +1,52 @@
+<sb-layout-dashboard>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <sb-dashboard-head title="Task" [hideBreadcrumbs]="false"> </sb-dashboard-head>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ task.name }}</td>
+                <td>{{ task.description }}</td>
+                <td>{{ task.status }}</td>
+                <td>
+                    <button type="button" name="update" (click)="update()" class="btn btn-dark">
+                        Update
+                    </button>
+                </td>
+                <td>
+                    <button
+                        type="submit"
+                        class="btn btn-danger"
+                        [routerLink]="['/task/all']"
+                        (click)="delete(task)"
+                    >
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Add Task to project</p>
+    <select [(ngModel)]="projectId">
+        <option *ngFor="let p of projects" [ngValue]="p.id"> {{p.name}}</option>
+    </select><br />
+    <br/>
+            <button type="button" class="btn btn-sm btn-primary product-btn" (click)="addTaskToProject()">View
+                Add
+            </button>
+
+<div *ngIf="updateEtat">
+                <sb-update-task [task]="task"></sb-update-task>
+            </div>
+</sb-layout-dashboard>
+
+
+

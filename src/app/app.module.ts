@@ -14,10 +14,28 @@ import { RouterModule } from '@angular/router';
 import { ProductModule } from '../modules/product/product.module';
 import { EventModule } from '@modules/event/event.module';
 import { CampaignModule } from '@modules/campaign/campaign.module';
+import { ProjectModule } from '../modules/project/project.module';
+import { TaskModule } from '../modules/task/task.module';
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, AppRoutingModule, HttpClientModule, EventModule, CampaignModule, PersonModule, SalesmanModule, PromotionModule, PurchaseModule,FormsModule,StockModule, ProductModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        EventModule, 
+        CampaignModule,
+        PersonModule,
+        SalesmanModule,
+        PromotionModule,
+        PurchaseModule,
+        FormsModule,
+        StockModule, 
+        ProductModule,
+        ProjectModule,
+        TaskModule,
+        UserModule
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })

@@ -1,0 +1,34 @@
+<style>
+    .box {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+</style>
+<div class="container">
+    <div *ngIf="!submitted">
+        <h1>Update Task {{ task.name }}!</h1>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="libelleRayon">Name</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="task.name" />
+            </div>
+            <div class="form-group">
+                <label for="codeRayon">Description</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="description"
+                    [(ngModel)]="task.description"
+                />
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select class="form-control" name="status" [(ngModel)]="task.status">
+                    <option value="true">Active</option>
+                    <option value="false">Stoppé</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-dark" [disabled]="">Submit</button>
+        </form>
+    </div>
+</div>

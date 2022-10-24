@@ -1,0 +1,86 @@
+<div class="container">
+    <div>
+        <form (ngSubmit)="submit()" #rayon="ngForm" [formGroup]="addForm">
+            <div class="form-group">
+                <label for="name" formControlName="name">Name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    formControlName="name"
+                    ngModel
+                />
+                <div class="alert alert-danger" [hidden]="!name?.invalid">Name is required</div>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Description</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="description"
+                    formControlName="description"
+                    ngModel
+                />
+                <div class="alert alert-danger" [hidden]="!description?.invalid">
+                    description is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="expiredTime">Durée</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="expiredTime"
+                    formControlName="expiredTime"
+                    ngModel
+                />
+                <div class="alert alert-danger" [hidden]="!expiredTime?.invalid">
+                    Duration is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select class="form-control" name="status" formControlName="status" ngModel>
+                    <option value="True">En cours</option>
+                    <option value="False">Stoppé</option>
+                </select>
+                <div class="alert alert-danger" [hidden]="!status?.invalid">status is required</div>
+            </div>
+            <div class="form-group">
+                <label for="isExpired">Terminée?</label>
+                <select class="form-control" name="isExpired" formControlName="isExpired" ngModel>
+                    <option value="true">Oui</option>
+                    <option value="false">Non</option>
+                </select>
+                <div class="alert alert-danger" [hidden]="!isExpired?.invalid">
+                    Expired is required
+                </div>
+            </div>
+
+
+                <!-- <div class="form-group">
+                    <label for="project_id">Projects?</label>
+                    <tr *ngFor="let p of projects">
+                        <th>{{ p.id }}</th>
+                        <th></th>
+                    </tr>
+                    <select class="form-control" name="project_id" formControlName="project_id" ngModel>
+                        <option value="Trus">{{ p.id }} {{ p.name }}</option>
+                        
+                    </select>
+                
+                   
+                </div> -->
+                <!-- <div class="row mb-2">
+                    <div class="col-sm-8">
+                        <h3 class="m-0" (click)="projectButtonClicked()">Projects</h3>
+                        
+                    </div> 
+                </div>-->
+          
+
+            <button type="submit" class="btn btn-dark" [disabled]="addForm.invalid">Submit</button>
+        </form>
+    </div>
+</div>
+<br /><br />
